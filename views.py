@@ -317,7 +317,16 @@ async def wallet_transfer(_):
     body = {
         "transaction_id": "123",
         "amount": 100000,
-        "info": [{"string": "lalala", "value": "lalala"}],
+        "info": [
+            {"string": "Карта получателя", "value": "9860 14** **** 0036"},
+            {"string": "Сумма перевода", "value": "3 000,00 UZS"},
+            {"string": "Комиссия", "value": "15,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:49:06"},
+            {"string": "Комментарий (его видите только вы)", "value": "Test"},
+            {"string": "Номер терминала", "value": "91600126"},
+            {"string": "ID транзакции", "value": "736334"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
         "transaction_type": "p2p",
         "transaction_group": "p2p",
     }
@@ -329,7 +338,16 @@ async def wallet_transfer(_):
 async def wallet_pre_transfer(_):
     body = {
         "transaction_id": 123,
-        "info": [{"string": "lalala", "value": "lalala"}],
+        "info": [
+            {"string": "Карта получателя", "value": "9860 14** **** 0036"},
+            {"string": "Сумма перевода", "value": "3 000,00 UZS"},
+            {"string": "Комиссия", "value": "15,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:49:06"},
+            {"string": "Комментарий (его видите только вы)", "value": "Test"},
+            {"string": "Номер терминала", "value": "91600126"},
+            {"string": "ID транзакции", "value": "736334"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
         "transaction_type": "p2p",
         "transaction_group": "p2p",
         "is_otp": True,
@@ -1073,9 +1091,16 @@ async def vendor_balance(_):
 async def vendor_payment_prepare(_):
     body = {
         "transaction_id": 123,
-        "info": [{"string": "lalala", "value": "lalala"}],
-        "transaction_type": "p2p",
-        "transaction_group": "p2p",
+        "info": [
+            {"string": "Номер телефона", "value": "901234567"},
+            {"string": "Сумма платежа", "value": "1 000,00 UZS"},
+            {"string": "Комиссия", "value": "0,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:52:06"},
+            {"string": "ID транзакции", "value": "736336"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
+        "transaction_type": "vendor",
+        "transaction_group": "vendor",
         "is_otp": True,
     }
     return prepare_response(body=body)
@@ -1087,9 +1112,16 @@ async def vendor_payment_perform(_):
     body = {
         "transaction_id": "123",
         "amount": 100000,
-        "info": [{"string": "lalala", "value": "lalala"}],
-        "transaction_type": "p2p",
-        "transaction_group": "p2p",
+        "info": [
+            {"string": "Номер телефона", "value": "901234567"},
+            {"string": "Сумма платежа", "value": "1 000,00 UZS"},
+            {"string": "Комиссия", "value": "0,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:52:06"},
+            {"string": "ID транзакции", "value": "736336"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
+        "transaction_type": "vendor",
+        "transaction_group": "vendor",
     }
     return prepare_response(body=body)
 
@@ -1099,9 +1131,16 @@ async def vendor_payment_perform(_):
 async def vendor_pay_prepare_with_card(_):
     body = {
         "transaction_id": 123,
-        "info": [{"string": "lalala", "value": "lalala"}],
-        "transaction_type": "p2p",
-        "transaction_group": "p2p",
+        "info": [
+            {"string": "Номер телефона", "value": "901234567"},
+            {"string": "Сумма платежа", "value": "1 000,00 UZS"},
+            {"string": "Комиссия", "value": "0,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:52:06"},
+            {"string": "ID транзакции", "value": "736336"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
+        "transaction_type": "vendor",
+        "transaction_group": "vendor",
         "is_otp": True,
     }
     return prepare_response(body=body)
@@ -1113,9 +1152,16 @@ async def vendor_pay_perform_with_card(_):
     body = {
         "transaction_id": "123",
         "amount": 100000,
-        "info": [{"string": "lalala", "value": "lalala"}],
-        "transaction_type": "p2p",
-        "transaction_group": "p2p",
+        "info": [
+            {"string": "Номер телефона", "value": "901234567"},
+            {"string": "Сумма платежа", "value": "1 000,00 UZS"},
+            {"string": "Комиссия", "value": "0,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:52:06"},
+            {"string": "ID транзакции", "value": "736336"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
+        "transaction_type": "vendor",
+        "transaction_group": "vendor",
     }
     return prepare_response(body=body)
 
@@ -1125,7 +1171,14 @@ async def vendor_pay_perform_with_card(_):
 async def deposit_create(_):
     body = {
         "transaction_id": 123,
-        "info": [{"string": "lalala", "value": "lalala"}],
+        "info": [
+            {"string": "Номер телефона", "value": "901234567"},
+            {"string": "Сумма платежа", "value": "1 000,00 UZS"},
+            {"string": "Комиссия", "value": "0,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:52:06"},
+            {"string": "ID транзакции", "value": "736336"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
         "transaction_type": "deposit",
         "transaction_group": "deposit",
         "is_otp": True,
@@ -1139,7 +1192,14 @@ async def deposit_confirm(_):
     body = {
         "transaction_id": "123",
         "amount": 100000,
-        "info": [{"string": "lalala", "value": "lalala"}],
+        "info": [
+            {"string": "Номер телефона", "value": "901234567"},
+            {"string": "Сумма платежа", "value": "1 000,00 UZS"},
+            {"string": "Комиссия", "value": "0,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:52:06"},
+            {"string": "ID транзакции", "value": "736336"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
         "transaction_type": "deposit",
         "transaction_group": "deposit",
     }
@@ -1163,91 +1223,265 @@ async def foreign_course(_):
 @mobile_v2.get("/api/mobile/v2/p2p/card/token/pre_transfer")
 @mobile_v2.post("/api/mobile/v2/p2p/card/token/pre_transfer")
 async def p2p_pre_transfer_lc_c(_):
-    body = {}
+    body = {
+        "transaction_id": 123,
+        "info": [
+            {"string": "Карта получателя", "value": "9860 14** **** 0036"},
+            {"string": "Сумма перевода", "value": "3 000,00 UZS"},
+            {"string": "Комиссия", "value": "15,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:49:06"},
+            {"string": "Комментарий (его видите только вы)", "value": "Test"},
+            {"string": "Номер терминала", "value": "91600126"},
+            {"string": "ID транзакции", "value": "736334"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
+        "transaction_type": "p2p",
+        "transaction_group": "p2p",
+        "is_otp": True,
+    }
     return prepare_response(body=body)
 
 
 @mobile_v2.get("/api/mobile/v2/p2p/card/token/transfer")
 @mobile_v2.post("/api/mobile/v2/p2p/card/token/transfer")
 async def p2p_transfer_lc_c(_):
-    body = {}
+    body = {
+        "transaction_id": 123,
+        "info": [
+            {"string": "Карта получателя", "value": "9860 14** **** 0036"},
+            {"string": "Сумма перевода", "value": "3 000,00 UZS"},
+            {"string": "Комиссия", "value": "15,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:49:06"},
+            {"string": "Комментарий (его видите только вы)", "value": "Test"},
+            {"string": "Номер терминала", "value": "91600126"},
+            {"string": "ID транзакции", "value": "736334"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
+        "transaction_type": "p2p",
+        "transaction_group": "p2p",
+    }
     return prepare_response(body=body)
 
 
 @mobile_v2.get("/api/mobile/v2/p2p/card/by_card_id/pre_transfer")
 @mobile_v2.post("/api/mobile/v2/p2p/card/by_card_id/pre_transfer")
 async def p2p_pre_transfer_lc_ci(_):
-    body = {}
+    body = {
+        "transaction_id": 123,
+        "info": [
+            {"string": "Карта получателя", "value": "9860 14** **** 0036"},
+            {"string": "Сумма перевода", "value": "3 000,00 UZS"},
+            {"string": "Комиссия", "value": "15,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:49:06"},
+            {"string": "Комментарий (его видите только вы)", "value": "Test"},
+            {"string": "Номер терминала", "value": "91600126"},
+            {"string": "ID транзакции", "value": "736334"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
+        "transaction_type": "p2p",
+        "transaction_group": "p2p",
+        "is_otp": True,
+    }
     return prepare_response(body=body)
 
 
 @mobile_v2.get("/api/mobile/v2/p2p/card/by_card_id/transfer")
 @mobile_v2.post("/api/mobile/v2/p2p/card/by_card_id/transfer")
 async def p2p_transfer_lc_ci(_):
-    body = {}
+    body = {
+        "transaction_id": 123,
+        "info": [
+            {"string": "Карта получателя", "value": "9860 14** **** 0036"},
+            {"string": "Сумма перевода", "value": "3 000,00 UZS"},
+            {"string": "Комиссия", "value": "15,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:49:06"},
+            {"string": "Комментарий (его видите только вы)", "value": "Test"},
+            {"string": "Номер терминала", "value": "91600126"},
+            {"string": "ID транзакции", "value": "736334"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
+        "transaction_type": "p2p",
+        "transaction_group": "p2p",
+    }
     return prepare_response(body=body)
 
 
 @mobile_v2.get("/api/mobile/v2/p2p/card/by_id/pre_transfer")
 @mobile_v2.post("/api/mobile/v2/p2p/card/by_id/pre_transfer")
 async def p2p_pre_transfer_lc_lc(_):
-    body = {}
+    body = {
+        "transaction_id": 123,
+        "info": [
+            {"string": "Карта получателя", "value": "9860 14** **** 0036"},
+            {"string": "Сумма перевода", "value": "3 000,00 UZS"},
+            {"string": "Комиссия", "value": "15,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:49:06"},
+            {"string": "Комментарий (его видите только вы)", "value": "Test"},
+            {"string": "Номер терминала", "value": "91600126"},
+            {"string": "ID транзакции", "value": "736334"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
+        "transaction_type": "p2p",
+        "transaction_group": "p2p",
+        "is_otp": True,
+    }
     return prepare_response(body=body)
 
 
 @mobile_v2.get("/api/mobile/v2/p2p/card/by_id/transfer")
 @mobile_v2.post("/api/mobile/v2/p2p/card/by_id/transfer")
 async def p2p_transfer_lc_lc(_):
-    body = {}
+    body = {
+        "transaction_id": 123,
+        "info": [
+            {"string": "Карта получателя", "value": "9860 14** **** 0036"},
+            {"string": "Сумма перевода", "value": "3 000,00 UZS"},
+            {"string": "Комиссия", "value": "15,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:49:06"},
+            {"string": "Комментарий (его видите только вы)", "value": "Test"},
+            {"string": "Номер терминала", "value": "91600126"},
+            {"string": "ID транзакции", "value": "736334"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
+        "transaction_type": "p2p",
+        "transaction_group": "p2p",
+    }
     return prepare_response(body=body)
 
 
 @mobile_v2.get("/api/mobile/v2/p2p/wallet/pre_transfer")
 @mobile_v2.post("/api/mobile/v2/p2p/wallet/pre_transfer")
 async def p2p_pre_wallet_unknown(_):
-    body = {}
+    body = {
+        "transaction_id": 123,
+        "info": [
+            {"string": "Карта получателя", "value": "9860 14** **** 0036"},
+            {"string": "Сумма перевода", "value": "3 000,00 UZS"},
+            {"string": "Комиссия", "value": "15,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:49:06"},
+            {"string": "Комментарий (его видите только вы)", "value": "Test"},
+            {"string": "Номер терминала", "value": "91600126"},
+            {"string": "ID транзакции", "value": "736334"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
+        "transaction_type": "p2p",
+        "transaction_group": "p2p",
+        "is_otp": True,
+    }
     return prepare_response(body=body)
 
 
 @mobile_v2.get("/api/mobile/v2/p2p/wallet/transfer")
 @mobile_v2.post("/api/mobile/v2/p2p/wallet/transfer")
 async def p2p_wallet_unknown(_):
-    body = {}
+    body = {
+        "transaction_id": 123,
+        "info": [
+            {"string": "Карта получателя", "value": "9860 14** **** 0036"},
+            {"string": "Сумма перевода", "value": "3 000,00 UZS"},
+            {"string": "Комиссия", "value": "15,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:49:06"},
+            {"string": "Комментарий (его видите только вы)", "value": "Test"},
+            {"string": "Номер терминала", "value": "91600126"},
+            {"string": "ID транзакции", "value": "736334"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
+        "transaction_type": "p2p",
+        "transaction_group": "p2p",
+    }
     return prepare_response(body=body)
 
 
 @mobile_v2.get("/api/mobile/v2/p2p/wallet/to_id/pre_transfer")
 @mobile_v2.post("/api/mobile/v2/p2p/wallet/to_id/pre_transfer")
 async def p2p_pre_wallet_connected(_):
-    body = {}
+    body = {
+        "transaction_id": 123,
+        "info": [
+            {"string": "Карта получателя", "value": "9860 14** **** 0036"},
+            {"string": "Сумма перевода", "value": "3 000,00 UZS"},
+            {"string": "Комиссия", "value": "15,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:49:06"},
+            {"string": "Комментарий (его видите только вы)", "value": "Test"},
+            {"string": "Номер терминала", "value": "91600126"},
+            {"string": "ID транзакции", "value": "736334"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
+        "transaction_type": "p2p",
+        "transaction_group": "p2p",
+        "is_otp": True,
+    }
     return prepare_response(body=body)
 
 
 @mobile_v2.get("/api/mobile/v2/p2p/wallet/to_id/transfer")
 @mobile_v2.post("/api/mobile/v2/p2p/wallet/to_id/transfer")
 async def p2p_wallet_connected(_):
-    body = {}
+    body = {
+        "transaction_id": 123,
+        "info": [
+            {"string": "Карта получателя", "value": "9860 14** **** 0036"},
+            {"string": "Сумма перевода", "value": "3 000,00 UZS"},
+            {"string": "Комиссия", "value": "15,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:49:06"},
+            {"string": "Комментарий (его видите только вы)", "value": "Test"},
+            {"string": "Номер терминала", "value": "91600126"},
+            {"string": "ID транзакции", "value": "736334"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
+        "transaction_type": "p2p",
+        "transaction_group": "p2p",
+    }
     return prepare_response(body=body)
 
 
 @mobile_v2.get("/api/mobile/v2/transactions/bounds")
 @mobile_v2.post("/api/mobile/v2/transactions/bounds")
 async def transaction_bounds(_):
-    body = {}
+    body = {"max": 100000000, "min": 100000}
     return prepare_response(body=body)
 
 
 @mobile_v2.get("/api/mobile/v2/p2p/wallet/by_card_id/pre_transfer")
 @mobile_v2.post("/api/mobile/v2/p2p/wallet/by_card_id/pre_transfer")
 async def p2p_pre_wallet_card_id(_):
-    body = {}
+    body = {
+        "transaction_id": 123,
+        "info": [
+            {"string": "Карта получателя", "value": "9860 14** **** 0036"},
+            {"string": "Сумма перевода", "value": "3 000,00 UZS"},
+            {"string": "Комиссия", "value": "15,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:49:06"},
+            {"string": "Комментарий (его видите только вы)", "value": "Test"},
+            {"string": "Номер терминала", "value": "91600126"},
+            {"string": "ID транзакции", "value": "736334"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
+        "transaction_type": "p2p",
+        "transaction_group": "p2p",
+        "is_otp": True,
+    }
     return prepare_response(body=body)
 
 
 @mobile_v2.get("/api/mobile/v2/p2p/wallet/by_card_id/transfer")
 @mobile_v2.post("/api/mobile/v2/p2p/wallet/by_card_id/transfer")
 async def p2p_wallet_card_id(_):
-    body = {}
+    body = {
+        "transaction_id": 123,
+        "info": [
+            {"string": "Карта получателя", "value": "9860 14** **** 0036"},
+            {"string": "Сумма перевода", "value": "3 000,00 UZS"},
+            {"string": "Комиссия", "value": "15,00 UZS"},
+            {"string": "Дата и время транзакции", "value": "03-04-2024 12:49:06"},
+            {"string": "Комментарий (его видите только вы)", "value": "Test"},
+            {"string": "Номер терминала", "value": "91600126"},
+            {"string": "ID транзакции", "value": "736334"},
+            {"string": "Источник перевода", "value": "Моя основная **5512"},
+        ],
+        "transaction_type": "p2p",
+        "transaction_group": "p2p",
+    }
     return prepare_response(body=body)
 
 
@@ -1286,13 +1520,6 @@ async def account_open_data(_):
     return prepare_response(body=body)
 
 
-@mobile_v2.get("/api/mobile/v2/transactions/bounds")
-@mobile_v2.post("/api/mobile/v2/transactions/bounds")
-async def get_limits(_):
-    body = {}
-    return prepare_response(body=body)
-
-
 @mobile_v2.get("/api/mobile/v2/transactions/limits/check")
 @mobile_v2.post("/api/mobile/v2/transactions/limits/check")
 async def limits_check(_):
@@ -1303,14 +1530,184 @@ async def limits_check(_):
 @mobile_v2.get("/api/mobile/v2/transactions/list")
 @mobile_v2.post("/api/mobile/v2/transactions/list")
 async def transaction_list(_):
-    body = {}
+    body = [
+        {
+            "id": "736336",
+            "amount": 100000,
+            "date": "Wed, 03 Apr 2024 07:52:06 GMT",
+            "type": 8,
+            "refill": False,
+            "logo": "https://cdn.hordor.uz/vendors/logo/101772.png",
+            "payer": "8600 31** **** 5512",
+            "payee": "Beeline",
+            "status": 2,
+            "info": [
+                {"string": "Номер телефона", "value": "901234567"},
+                {"string": "Сумма платежа", "value": "1 000,00 UZS"},
+                {"string": "Комиссия", "value": "0,00 UZS"},
+                {"string": "Дата и время транзакции", "value": "03-04-2024 12:52:06"},
+                {"string": "ID транзакции", "value": "736336"},
+                {"string": "Источник перевода", "value": "Моя основная **5512"},
+            ],
+            "is_starred": False,
+        },
+        {
+            "id": "736334",
+            "amount": 301500,
+            "date": "Wed, 03 Apr 2024 07:49:06 GMT",
+            "type": 3,
+            "refill": False,
+            "logo": "https://cdn.garantbank.uz:60443/public/vendors/categories/p2p-own.png",
+            "payer": "8600 31** **** 5512",
+            "payee": "9860 14** **** 0036",
+            "status": 2,
+            "info": [
+                {"string": "Карта получателя", "value": "9860 14** **** 0036"},
+                {"string": "Сумма перевода", "value": "3 000,00 UZS"},
+                {"string": "Комиссия", "value": "15,00 UZS"},
+                {"string": "Дата и время транзакции", "value": "03-04-2024 12:49:06"},
+                {"string": "Комментарий (его видите только вы)", "value": "Test"},
+                {"string": "Номер терминала", "value": "91600126"},
+                {"string": "ID транзакции", "value": "736334"},
+                {"string": "Источник перевода", "value": "Моя основная **5512"},
+            ],
+            "is_starred": False,
+        },
+        {
+            "id": "736322",
+            "amount": 100000,
+            "date": "Thu, 28 Mar 2024 12:11:38 GMT",
+            "type": 8,
+            "refill": False,
+            "logo": "https://cdn.hordor.uz/vendors/logo/101772.png",
+            "payer": "8600 31** **** 5512",
+            "payee": "Beeline",
+            "status": 2,
+            "info": [
+                {"string": "Номер телефона", "value": "901234567"},
+                {"string": "Сумма платежа", "value": "1 000,00 UZS"},
+                {"string": "Комиссия", "value": "0,00 UZS"},
+                {"string": "Дата и время транзакции", "value": "28-03-2024 17:11:38"},
+                {"string": "ID транзакции", "value": "736322"},
+                {"string": "Источник перевода", "value": "Моя основная **5512"},
+            ],
+            "is_starred": False,
+        },
+        {
+            "id": "736315",
+            "amount": 100500,
+            "date": "Tue, 26 Mar 2024 09:00:43 GMT",
+            "type": 3,
+            "refill": False,
+            "logo": "https://cdn.garantbank.uz:60443/public/vendors/categories/p2p-own.png",
+            "payer": "8600 31** **** 5512",
+            "payee": "6262 96** **** 0407",
+            "status": 2,
+            "info": [
+                {"string": "Карта получателя", "value": "6262 96** **** 0407"},
+                {"string": "Сумма перевода", "value": "1 000,00 UZS"},
+                {"string": "Комиссия", "value": "5,00 UZS"},
+                {"string": "Дата и время транзакции", "value": "26-03-2024 14:00:43"},
+                {"string": "Комментарий (его видите только вы)", "value": "test\n\n"},
+                {"string": "Номер терминала", "value": "91600261"},
+                {"string": "ID транзакции", "value": "736315"},
+                {"string": "Источник перевода", "value": "Моя основная **5512"},
+            ],
+            "is_starred": False,
+        },
+    ]
     return prepare_response(body=body)
 
 
 @mobile_v2.get("/api/mobile/v2/transactions/list/by_card")
 @mobile_v2.post("/api/mobile/v2/transactions/list/by_card")
 async def transaction_list_by_card(_):
-    body = {}
+    body = [
+        {
+            "id": "736336",
+            "amount": 100000,
+            "date": "Wed, 03 Apr 2024 07:52:06 GMT",
+            "type": 8,
+            "refill": False,
+            "logo": "https://cdn.hordor.uz/vendors/logo/101772.png",
+            "payer": "8600 31** **** 5512",
+            "payee": "Beeline",
+            "status": 2,
+            "info": [
+                {"string": "Номер телефона", "value": "901234567"},
+                {"string": "Сумма платежа", "value": "1 000,00 UZS"},
+                {"string": "Комиссия", "value": "0,00 UZS"},
+                {"string": "Дата и время транзакции", "value": "03-04-2024 12:52:06"},
+                {"string": "ID транзакции", "value": "736336"},
+                {"string": "Источник перевода", "value": "Моя основная **5512"},
+            ],
+            "is_starred": False,
+        },
+        {
+            "id": "736334",
+            "amount": 301500,
+            "date": "Wed, 03 Apr 2024 07:49:06 GMT",
+            "type": 3,
+            "refill": False,
+            "logo": "https://cdn.garantbank.uz:60443/public/vendors/categories/p2p-own.png",
+            "payer": "8600 31** **** 5512",
+            "payee": "9860 14** **** 0036",
+            "status": 2,
+            "info": [
+                {"string": "Карта получателя", "value": "9860 14** **** 0036"},
+                {"string": "Сумма перевода", "value": "3 000,00 UZS"},
+                {"string": "Комиссия", "value": "15,00 UZS"},
+                {"string": "Дата и время транзакции", "value": "03-04-2024 12:49:06"},
+                {"string": "Комментарий (его видите только вы)", "value": "Test"},
+                {"string": "Номер терминала", "value": "91600126"},
+                {"string": "ID транзакции", "value": "736334"},
+                {"string": "Источник перевода", "value": "Моя основная **5512"},
+            ],
+            "is_starred": False,
+        },
+        {
+            "id": "736322",
+            "amount": 100000,
+            "date": "Thu, 28 Mar 2024 12:11:38 GMT",
+            "type": 8,
+            "refill": False,
+            "logo": "https://cdn.hordor.uz/vendors/logo/101772.png",
+            "payer": "8600 31** **** 5512",
+            "payee": "Beeline",
+            "status": 2,
+            "info": [
+                {"string": "Номер телефона", "value": "901234567"},
+                {"string": "Сумма платежа", "value": "1 000,00 UZS"},
+                {"string": "Комиссия", "value": "0,00 UZS"},
+                {"string": "Дата и время транзакции", "value": "28-03-2024 17:11:38"},
+                {"string": "ID транзакции", "value": "736322"},
+                {"string": "Источник перевода", "value": "Моя основная **5512"},
+            ],
+            "is_starred": False,
+        },
+        {
+            "id": "736315",
+            "amount": 100500,
+            "date": "Tue, 26 Mar 2024 09:00:43 GMT",
+            "type": 3,
+            "refill": False,
+            "logo": "https://cdn.garantbank.uz:60443/public/vendors/categories/p2p-own.png",
+            "payer": "8600 31** **** 5512",
+            "payee": "6262 96** **** 0407",
+            "status": 2,
+            "info": [
+                {"string": "Карта получателя", "value": "6262 96** **** 0407"},
+                {"string": "Сумма перевода", "value": "1 000,00 UZS"},
+                {"string": "Комиссия", "value": "5,00 UZS"},
+                {"string": "Дата и время транзакции", "value": "26-03-2024 14:00:43"},
+                {"string": "Комментарий (его видите только вы)", "value": "test\n\n"},
+                {"string": "Номер терминала", "value": "91600261"},
+                {"string": "ID транзакции", "value": "736315"},
+                {"string": "Источник перевода", "value": "Моя основная **5512"},
+            ],
+            "is_starred": False,
+        },
+    ]
     return prepare_response(body=body)
 
 
@@ -1604,7 +2001,7 @@ async def cards_by_phone(_):
 @mobile_v2.get("/api/mobile/v2/transactions/pay_methods")
 @mobile_v2.post("/api/mobile/v2/transactions/pay_methods")
 async def transaction_pay_methods(_):
-    body = {}
+    body = ["local-uzcard", "local-humo"]
     return prepare_response(body=body)
 
 
