@@ -1000,7 +1000,7 @@ async def repeat_payment(_):
                 "key": "phone_number",
                 "element": "input",
                 "type": "int",
-                "value": "",
+                "value": "901234567",
                 "show": 1,
                 "mask": "## ### ## ##",
                 "prefix": "+998",
@@ -1488,7 +1488,14 @@ async def p2p_wallet_card_id(_):
 @mobile_v2.get("/api/mobile/v2/transactions/repeat/p2p")
 @mobile_v2.post("/api/mobile/v2/transactions/repeat/p2p")
 async def p2p_repeat(_):
-    body = {}
+    body = {
+        "amount": 100000,
+        "full_name": "JOHN DOE",
+        "masked_card_number": "860031******4117",
+        "method": "by_number",
+        "payee": "8600312916504117",
+        "card_type": "UZCARD",
+    }
     return prepare_response(body=body)
 
 
@@ -1882,7 +1889,7 @@ async def account_ident_level(_):
 @mobile_v2.get("/api/mobile/v2/transactions/otp/send")
 @mobile_v2.post("/api/mobile/v2/transactions/otp/send")
 async def otp_send(_):
-    body = {}
+    body = {"code_id": TOKEN}
     return prepare_response(body=body)
 
 
@@ -1896,14 +1903,14 @@ async def otp_resend(_):
 @mobile_v2.get("/api/mobile/v2/transactions/otp/check")
 @mobile_v2.post("/api/mobile/v2/transactions/otp/check")
 async def otp_check(_):
-    body = {}
+    body = {"result": 1}
     return prepare_response(body=body)
 
 
 @mobile_v2.get("/api/mobile/v2/transactions/otp/auto/check")
 @mobile_v2.post("/api/mobile/v2/transactions/otp/auto/check")
 async def otp_auto_check(_):
-    body = {}
+    body = {"result": 1}
     return prepare_response(body=body)
 
 
@@ -1973,7 +1980,88 @@ async def get_card_info_by_hash(_):
 @mobile_v2.get("/api/mobile/v2/feature_flags/list")
 @mobile_v2.post("/api/mobile/v2/feature_flags/list")
 async def feature_flags(_):
-    body = {}
+    body = [
+        {
+            "title": "notification",
+            "description": "колокольчик на главном экране",
+            "attributes": {"visible": True},
+        },
+        {
+            "title": "banners",
+            "description": "колокольчик на главном экране",
+            "attributes": {"visible": True},
+        },
+        {
+            "title": "loyalty",
+            "description": "колокольчик на главном экране",
+            "attributes": {"visible": True},
+        },
+        {
+            "title": "nfc",
+            "description": "колокольчик на главном экране",
+            "attributes": {"visible": True},
+        },
+        {
+            "title": "vendorinput",
+            "description": "колокольчик на главном экране",
+            "attributes": {"visible": True},
+        },
+        {
+            "title": "towallet",
+            "description": "колокольчик на главном экране",
+            "attributes": {"visible": True},
+        },
+        {
+            "title": "showinsearch",
+            "description": "колокольчик на главном экране",
+            "attributes": {"visible": True},
+        },
+        {
+            "title": "favouritesettings",
+            "description": "колокольчик на главном экране",
+            "attributes": {"visible": True},
+        },
+        {
+            "title": "starred_payments",
+            "description": "колокольчик на главном экране",
+            "attributes": {"visible": True},
+        },
+        {
+            "title": "add_p2p_to_fav_main",
+            "description": "колокольчик на главном экране",
+            "attributes": {"visible": True},
+        },
+        {
+            "title": "history_favourites_p2p",
+            "description": "колокольчик на главном экране",
+            "attributes": {"visible": True},
+        },
+        {
+            "title": "ask_for_money",
+            "description": "колокольчик на главном экране",
+            "attributes": {"visible": True},
+        },
+        {
+            "title": "russian_numbers",
+            "description": "колокольчик на главном экране",
+            "attributes": {"visible": True},
+        },
+        {
+            "title": "push_checkbox",
+            "description": "колокольчик на главном экране",
+            "attributes": {"visible": True},
+        },
+        {
+            "title": "invest",
+            "description": "колокольчик на главном экране",
+            "attributes": {"visible": True},
+        },
+        {
+            "title": "bookhara_aviatickets",
+            "description": "колокольчик на главном экране",
+            "attributes": {"visible": True},
+        },
+    ]
     return prepare_response(body=body)
 
 
