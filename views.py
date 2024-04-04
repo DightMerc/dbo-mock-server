@@ -1516,7 +1516,7 @@ async def p2p_wallet_commission(_):
 @mobile_v2.get("/api/mobile/v2/vendors/latest/field/values")
 @mobile_v2.post("/api/mobile/v2/vendors/latest/field/values")
 async def vendor_latest_values(_):
-    body = {}
+    body = [{"key": "phone", "values": ["909625288"]}]
     return prepare_response(body=body)
 
 
