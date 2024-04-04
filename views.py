@@ -1763,7 +1763,46 @@ async def account_fio(_):
 @mobile_v2.get("/api/mobile/v2/notifications/list")
 @mobile_v2.post("/api/mobile/v2/notifications/list")
 async def notification_list(_):
-    body = {}
+    body = {
+        "items": [
+            {
+                "id": 58804,
+                "created": 1712044524,
+                "type": "profile",
+                "target_id": "0",
+                "body": {
+                    "title": "Успешная идентификация",
+                    "content": "Идентификаци прошла успешно! Теперь для вас увеличены лимиты и стали доступны эксклюзивные функции DBO Кошелька. Приятного использования",
+                    "button": "Перейти",
+                },
+                "logo": None,
+                "images": None,
+                "active": True,
+                "add_ons": None,
+                "icon": 3,
+                "check_box": None,
+            },
+            {
+                "id": 58803,
+                "created": 1710503209,
+                "type": "profile",
+                "target_id": "0",
+                "body": {
+                    "title": "Успешная идентификация",
+                    "content": "Идентификаци прошла успешно! Теперь для вас увеличены лимиты и стали доступны эксклюзивные функции DBO Кошелька. Приятного использования",
+                    "button": "Перейти",
+                },
+                "logo": None,
+                "images": None,
+                "active": True,
+                "add_ons": None,
+                "icon": 3,
+                "check_box": None,
+            },
+        ],
+        "page": 1,
+        "page_count": 1,
+    }
     return prepare_response(body=body)
 
 
@@ -1791,7 +1830,7 @@ async def notification_detail(_):
 @mobile_v2.get("/api/mobile/v2/notifications/count/unread")
 @mobile_v2.post("/api/mobile/v2/notifications/count/unread")
 async def notification_unread_count(_):
-    body = {}
+    body = {"unread_notifications_count": 2}
     return prepare_response(body=body)
 
 
