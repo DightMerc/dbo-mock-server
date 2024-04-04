@@ -1928,7 +1928,7 @@ async def account_ident_level(_):
 @mobile_v2.get("/api/mobile/v2/transactions/otp/send")
 @mobile_v2.post("/api/mobile/v2/transactions/otp/send")
 async def otp_send(_):
-    body = {"code_id": TOKEN}
+    body = {"code_id": 123}
     return prepare_response(body=body)
 
 
